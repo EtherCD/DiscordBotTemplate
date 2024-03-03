@@ -1,0 +1,24 @@
+{
+  "name": "discord-bot-template",
+  "version": "1.0.0",
+  "description": "Just template for working with discord.js",
+  "main": "./src/index.ts",
+  "scripts": {
+    "dev": "nodemon",
+    "start": "node ./src/dist",
+    "build": "tsc"
+  },
+  "repository": "https://github.com/EtherCD/DiscordBotTemplate.git",
+  "author": "EtherCD <ethernetcoder@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.4.5",
+    "eslint": "^8.57.0",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "tsc": "^2.0.4",
+    "typescript": "^5.3.3"
+  }
+}
