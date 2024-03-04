@@ -1,10 +1,7 @@
-import {
-	ChatInputCommandInteraction,
-	StringSelectMenuInteraction,
-} from 'discord.js'
+import { AnySelectMenuInteraction } from 'discord.js'
 
 export type SelectReplyCallback = (
-	interaction: StringSelectMenuInteraction
+	interaction: AnySelectMenuInteraction
 ) => Promise<void>
 
 export type Selects = Record<string, SelectReplyCallback>

@@ -1,7 +1,7 @@
 import { SlashCommands } from '../types/interaction.type'
 import FilesLoader from './files.loader'
 
-export default class CommandsLoader {
+export default class Loader {
 	static commands: SlashCommands = []
 	static loadedCommands: Array<Object> = []
 

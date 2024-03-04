@@ -1,14 +1,19 @@
-import { StringSelectMenuInteraction } from 'discord.js'
+import { AnySelectMenuInteraction } from 'discord.js'
 import { Selects } from '../types/select.type'
+import Interaction from '../decorators/interaction.decorator'
+
+export const SelectsRecord: Selects = {}
 
 export default class SelectHandler {
-	static selects: Selects = {}
-
-	static handle(interaction: StringSelectMenuInteraction) {
-		const ids = Object.keys(this.selects)
+	@Interaction(i => i.isAnySelectMenu())
+	static async handle(interaction: AnySelectMenuInteraction) {
+		const ids = Object.keys(SelectsRecord)
 		for (const i in ids) {
 			const id = ids[i]
-			if (interaction.customId === id) this.selects[id](interaction)
+			if (interaction.customId === id) {
+				await SelectsRecord[id](interaction)
+				return
+			}
 		}
 	}
 }

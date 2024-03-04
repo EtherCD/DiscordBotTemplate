@@ -10,9 +10,10 @@ export default class FilesLoader {
 			.map(file => {
 				const fileName = path.resolve(paths.commands, file)
 				const classModule = require(fileName)
-				let className = file.split('.')[0]
-				className = className.charAt(0).toUpperCase() + className.slice(1)
-				const ClassConstructor = classModule[className]
-				return new ClassConstructor()
+				let className = Object.keys(classModule)[0]
+				if (className) {
+					const ClassConstructor = classModule[className]
+					return new ClassConstructor()
+				}
 			})
 }

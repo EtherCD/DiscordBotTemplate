@@ -1,4 +1,4 @@
-import ButtonHandler from '../handlers/button.handler'
+import { ButtonsRecord } from '../handlers/button.handler'
 import { ButtonReplyCallback } from '../types/buttons.type'
 
 export default function ButtonReply<T extends ButtonReplyCallback>(id: string) {
@@ -7,6 +7,6 @@ export default function ButtonReply<T extends ButtonReplyCallback>(id: string) {
 		propertyKey: string,
 		descriptor: PropertyDescriptor
 	) {
-		ButtonHandler.buttons[id] = target[propertyKey] as T
+		ButtonsRecord[id] = target[propertyKey] as T
 	}
 }

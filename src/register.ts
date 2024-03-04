@@ -1,6 +1,6 @@
 import { REST, Routes } from 'discord.js'
 import { config } from 'dotenv'
-import InteractionsLoader from './loaders/commands.loader'
+import InteractionsLoader from './loaders/loader'
 
 config()
 

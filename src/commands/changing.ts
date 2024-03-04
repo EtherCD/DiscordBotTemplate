@@ -27,6 +27,7 @@ export class Changing {
 						.setCustomId('change')
 						.setLabel('Change message')
 						.setStyle(ButtonStyle.Primary)
+						.setEmoji('👍')
 				),
 			],
 		})
@@ -38,13 +39,6 @@ export class Changing {
 			content: 'Changed',
 			components: [
 				// To remove components, just put here empty array
-				//@ts-ignore
-				new ActionRowBuilder().setComponents(
-					new ButtonBuilder()
-						.setCustomId('um')
-						.setLabel('Thats message has be changed')
-						.setStyle(ButtonStyle.Primary)
-				),
 			],
 		})
 	}

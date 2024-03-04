@@ -1,4 +1,4 @@
-import ModalHandler from '../handlers/modal.handler'
+import { ModalsRecord } from '../handlers/modal.handler'
 import { ModalReplyCallback } from '../types/modal.types'
 
 export default function ModalReply<T extends ModalReplyCallback>(id: string) {
@@ -7,6 +7,6 @@ export default function ModalReply<T extends ModalReplyCallback>(id: string) {
 		propertyKey: string,
 		descriptor: PropertyDescriptor
 	) {
-		ModalHandler.modals[id] = target[propertyKey] as T
+		ModalsRecord[id] = target[propertyKey] as T
 	}
 }

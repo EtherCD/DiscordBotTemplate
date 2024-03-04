@@ -1,4 +1,4 @@
-import SelectHandler from '../handlers/select.handler'
+import { SelectsRecord } from '../handlers/select.handler'
 import { SelectReplyCallback } from '../types/select.type'
 
 export default function SelectReply<T extends SelectReplyCallback>(id: string) {
@@ -7,6 +7,6 @@ export default function SelectReply<T extends SelectReplyCallback>(id: string) {
 		propertyKey: string,
 		descriptor: PropertyDescriptor
 	) {
-		SelectHandler.selects[id] = target[propertyKey] as T
+		SelectsRecord[id] = target[propertyKey] as T
 	}
 }

@@ -1,4 +1,4 @@
-import CommandHandler from '../handlers/command.handler'
+import { CommandsRecord } from '../handlers/command.handler'
 import { CommandReplyCallback } from '../types/command.type'
 
 export default function Reply<T extends CommandReplyCallback>(id: string) {
@@ -7,6 +7,6 @@ export default function Reply<T extends CommandReplyCallback>(id: string) {
 		propertyKey: string,
 		descriptor: PropertyDescriptor
 	) {
-		CommandHandler.commands[id] = target[propertyKey] as T
+		CommandsRecord[id] = target[propertyKey] as T
 	}
 }
