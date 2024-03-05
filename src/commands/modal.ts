@@ -16,25 +16,25 @@ import ModalReply from '../decorators/modal.decorator'
 @Bind(
 	new SlashCommandBuilder()
 		.setName('modal')
-		.setDescription('Just testing modal window')
+		.setDescription('Create modal window')
 )
 export class Modal {
 	@Reply('modal')
 	async reply(interaction: ChatInputCommandInteraction) {
 		const modal = new ModalBuilder()
-			.setTitle('Create stream')
+			.setTitle('Modal Title')
 			.setCustomId('modal')
 			.setComponents(
 				new ActionRowBuilder().setComponents(
 					new TextInputBuilder()
-						.setLabel('Name')
-						.setCustomId('name')
+						.setLabel('First Input')
+						.setCustomId('finput')
 						.setStyle(TextInputStyle.Short)
 				) as ActionRowBuilder<TextInputBuilder>,
 				new ActionRowBuilder().setComponents(
 					new TextInputBuilder()
-						.setLabel('Date')
-						.setCustomId('date')
+						.setLabel('Second Input')
+						.setCustomId('sinput')
 						.setStyle(TextInputStyle.Short)
 				) as ActionRowBuilder<TextInputBuilder>
 			)
@@ -43,10 +43,11 @@ export class Modal {
 
 	@ModalReply('modal')
 	async modalReply(interaction: ModalSubmitInteraction) {
+		const get = (s: string) => interaction.fields.getTextInputValue(s)
 		await interaction.reply(
-			`Yey!\n Here stream name: ${interaction.fields.getTextInputValue(
-				'name'
-			)} \n Here stream date: ${interaction.fields.getTextInputValue('date')}`
+			`Hey!\n` +
+				`First input value: ${get('finput')}\n` +
+				`Second input value: ${get('sinput')}`
 		)
 	}
 }

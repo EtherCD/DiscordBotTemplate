@@ -12,7 +12,7 @@ import SelectReply from '../decorators/select.decorator'
 @Bind(
 	new SlashCommandBuilder()
 		.setName('select')
-		.setDescription('Just testing select')
+		.setDescription('Create select menu')
 )
 export class Select {
 	@Reply('select')

@@ -13,15 +13,15 @@ import ButtonReply from '../decorators/button.decorator'
 @Bind(
 	new SlashCommandBuilder()
 		.setName('button')
-		.setDescription('Just testing buttons')
+		.setDescription('Create button on message')
 )
 export class Button {
 	@Reply('button')
 	async reply(interaction: ChatInputCommandInteraction) {
 		const button = new ActionRowBuilder().setComponents(
 			new ButtonBuilder()
-				.setCustomId('button1')
-				.setLabel('Button 1')
+				.setCustomId('testbutton')
+				.setLabel('Test button')
 				.setStyle(ButtonStyle.Success)
 		) as ActionRowBuilder<ButtonBuilder>
 		await interaction.reply({
@@ -30,7 +30,7 @@ export class Button {
 		})
 	}
 
-	@ButtonReply('button1')
+	@ButtonReply('testbutton')
 	async buttonReply(interaction: ButtonInteraction) {
 		await interaction.reply('Button is working!!!')
 	}

@@ -6,6 +6,6 @@ import Bind from '../decorators/bind.decorator'
 export class Ping {
 	@Reply('ping')
 	async reply(interaction: ChatInputCommandInteraction) {
-		await interaction.reply(`Pong ${interaction.user.displayName}`)
+		await interaction.reply(`<@$${interaction.user.displayName}> pong!`)
 	}
 }

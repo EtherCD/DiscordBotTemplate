@@ -5,7 +5,7 @@
 	"main": "./src/index.ts",
 	"scripts": {
 		"dev": "nodemon",
-		"start": "node ./src/dist",
+		"start": "node ./dist",
 		"build": "tsc"
 	},
 	"repository": "https://github.com/EtherCD/DiscordBotTemplate.git",

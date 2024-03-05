@@ -10,13 +10,22 @@
 
 </div>
 
-# Package commands:
+# Package commands
 
 > dev - staring project wtih nodemon
 
 > build - builds the project
 
 > start - starts the builded project
+
+# Starting
+
+> Create .env file:
+
+```env
+TOKEN=Your discord bot token
+CLIENT_ID=Your discord aplication client id
+```
 
 # Guide
 

@@ -13,7 +13,7 @@ import ButtonReply from '../decorators/button.decorator'
 @Bind(
 	new SlashCommandBuilder()
 		.setName('changing')
-		.setDescription('Just testing changing of sended message')
+		.setDescription('Testing changes to a sent message')
 )
 export class Changing {
 	@Reply('changing')
