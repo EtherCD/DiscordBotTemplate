@@ -1,4 +1,4 @@
-import { Interaction, InteractionType, SlashCommandBuilder } from 'discord.js'
+import { Interaction, SlashCommandBuilder } from 'discord.js'
 
 export type SlashCommands = Array<SlashCommandBuilder>
 

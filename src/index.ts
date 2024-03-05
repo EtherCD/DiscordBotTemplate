@@ -1,6 +1,6 @@
 import { Client, IntentsBitField } from 'discord.js'
 import { config } from 'dotenv'
-import { init } from './register'
+import { init } from './rest'
 import InteractionHandler from './handlers/interaction.handler'
 
 config()

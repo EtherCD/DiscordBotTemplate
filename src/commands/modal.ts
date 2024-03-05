@@ -25,19 +25,18 @@ export class Modal {
 			.setTitle('Create stream')
 			.setCustomId('modal')
 			.setComponents(
-				//@ts-ignore
 				new ActionRowBuilder().setComponents(
 					new TextInputBuilder()
 						.setLabel('Name')
 						.setCustomId('name')
 						.setStyle(TextInputStyle.Short)
-				),
+				) as ActionRowBuilder<TextInputBuilder>,
 				new ActionRowBuilder().setComponents(
 					new TextInputBuilder()
 						.setLabel('Date')
 						.setCustomId('date')
 						.setStyle(TextInputStyle.Short)
-				)
+				) as ActionRowBuilder<TextInputBuilder>
 			)
 		await interaction.showModal(modal)
 	}

@@ -1,4 +1,4 @@
-import { ChatInputCommandInteraction, InteractionType } from 'discord.js'
+import { ChatInputCommandInteraction } from 'discord.js'
 import { Commands } from '../types/command.type'
 import Interaction from '../decorators/interaction.decorator'
 

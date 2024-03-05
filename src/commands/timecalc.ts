@@ -7,7 +7,6 @@ import Bind from '../decorators/bind.decorator'
 import Reply from '../decorators/command.decorator'
 
 @Bind(
-	//@ts-ignore
 	new SlashCommandBuilder()
 		.setName('timecalc')
 		.setDescription('Calculating of time')
@@ -16,7 +15,7 @@ import Reply from '../decorators/command.decorator'
 				.setName('seconds')
 				.setRequired(true)
 				.setDescription('anything')
-		)
+		) as SlashCommandBuilder
 )
 export default class TimeCalc {
 	@Reply('timecalc')

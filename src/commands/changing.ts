@@ -18,18 +18,17 @@ import ButtonReply from '../decorators/button.decorator'
 export class Changing {
 	@Reply('changing')
 	async reply(interaction: ChatInputCommandInteraction) {
+		const button = new ActionRowBuilder().setComponents(
+			new ButtonBuilder()
+				.setCustomId('change')
+				.setLabel('Change message')
+				.setStyle(ButtonStyle.Primary)
+				.setEmoji('👍')
+		) as ActionRowBuilder<ButtonBuilder>
+
 		await interaction.reply({
 			content: 'Hey...',
-			components: [
-				//@ts-ignore
-				new ActionRowBuilder().setComponents(
-					new ButtonBuilder()
-						.setCustomId('change')
-						.setLabel('Change message')
-						.setStyle(ButtonStyle.Primary)
-						.setEmoji('👍')
-				),
-			],
+			components: [button],
 		})
 	}
 
