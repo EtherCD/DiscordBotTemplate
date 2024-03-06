@@ -1,10 +1,10 @@
 import path from 'path'
 
-const RootPath: string = path.join(__dirname, '../../')
+const RootPath: string = path.join(__dirname, '../')
 
 const paths = {
-	commands: RootPath + '/src/commands/',
-	handlers: RootPath + '/src/handlers/',
+  commands: RootPath + '/commands/',
+  handlers: RootPath + '/handlers/',
 }
 
 export default paths

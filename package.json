@@ -1,26 +1,32 @@
 {
-	"name": "discord-bot-template",
-	"version": "1.0.0",
-	"description": "Just template for working with discord.js",
-	"main": "./src/index.ts",
-	"scripts": {
-		"dev": "nodemon",
-		"start": "node ./dist",
-		"build": "tsc"
-	},
-	"repository": "https://github.com/EtherCD/DiscordBotTemplate.git",
-	"author": "EtherCD <ethernetcoder@gmail.com>",
-	"license": "MIT",
-	"private": true,
-	"dependencies": {
-		"discord.js": "^14.14.1",
-		"dotenv": "^16.4.5",
-		"ts-node": "^10.9.2",
-		"tsc": "^2.0.4",
-		"typescript": "^5.3.3"
-	},
-	"devDependencies": {
-		"eslint": "^8.57.0",
-		"nodemon": "^3.1.0"
-	}
+  "name": "discord-bot-template",
+  "version": "1.0.0",
+  "description": "Just template for working with discord.js",
+  "main": "./src/index.ts",
+  "scripts": {
+    "dev": "nodemon",
+    "fix": "echo \"Prettier:\" && prettier -w src &&  echo \"ESLint:\" && eslint src --fix",
+    "start": "node ./dist",
+    "build": "prettier -w src && eslint src --fix && tsc"
+  },
+  "repository": "https://github.com/EtherCD/DiscordBotTemplate.git",
+  "author": "EtherCD <ethernetcoder@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.4.5",
+    "ts-node": "^10.9.2",
+    "tsc": "^2.0.4",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.1.1",
+    "@typescript-eslint/parser": "^7.1.1",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "nodemon": "^3.1.0",
+    "prettier": "^3.2.5"
+  }
 }

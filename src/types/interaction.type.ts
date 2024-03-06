@@ -1,11 +1,21 @@
-import { Interaction, SlashCommandBuilder } from 'discord.js'
+import {
+  Interaction,
+  SlashCommandBuilder,
+} from 'discord.js'
 
 export type SlashCommands = Array<SlashCommandBuilder>
 
-export type InteractionCallBack = (interaction: Interaction) => Promise<void>
+export type InteractionCallBack = (
+  interaction: Interaction,
+) => Promise<void>
 
-export type InteractionCheckCallBack = (interaction: Interaction) => boolean
+export type InteractionCheckCallBack = (
+  interaction: Interaction,
+) => boolean
 
 export type Interactions = Array<
-	[InteractionCheckCallBack, InteractionCallBack]
+  [InteractionCheckCallBack, InteractionCallBack]
 >
+
+// eslint-disable-next-line
+export type ClassWithCallBack<T> = Record<string, any>

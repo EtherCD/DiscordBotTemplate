@@ -18,6 +18,8 @@
 
 > start - starts the builded project
 
+> fix - formats the project via prettier along with eslint
+
 # Starting
 
 > Create .env file:
@@ -32,22 +34,25 @@ CLIENT_ID=Your discord aplication client id
 > Standard command file structure
 
 ```ts
-import { SlashCommandBuilder, ChatInputCommandInteraction } from 'discord.js'
+import {
+  SlashCommandBuilder,
+  ChatInputCommandInteraction,
+} from 'discord.js'
 import Bind from '../decorators/bind.decorator'
 import Reply from '../decorators/command.decorator'
 
 // Adds command to command array
 @Bind(
-	new SlashCommandBuilder()
-		.setName('mycommand') // Required field
-		.setDescription('My first command') // Required field
+  new SlashCommandBuilder()
+    .setName('mycommand') // Required field
+    .setDescription('My first command'), // Required field
 )
 export class MyCommand {
-	// Registers the response to command execution
-	@Reply('mycommand')
-	async reply(interaction: ChatInputCommandInteraction) {
-		await interaction.reply({ content: 'Hello World!' })
-	}
+  // Registers the response to command execution
+  @Reply('mycommand')
+  async reply(interaction: ChatInputCommandInteraction) {
+    await interaction.reply({ content: 'Hello World!' })
+  }
 }
 ```
 
@@ -56,19 +61,21 @@ export class MyCommand {
 ```ts
 // In command class
 class MyCommand {
-	@ButtonReply('') // customId of button
-	async buttonReply(interaction: ButtonInteraction) {
-		await interaction.reply('Button click response')
-	}
+  @ButtonReply('') // customId of button
+  async buttonReply(interaction: ButtonInteraction) {
+    await interaction.reply('Button click response')
+  }
 
-	@ModalReply('') // customId of modal window
-	async modalReply(interaction: ModalSubmitInteraction) {
-		await interaction.reply('Response on confirm of modal window')
-	}
+  @ModalReply('') // customId of modal window
+  async modalReply(interaction: ModalSubmitInteraction) {
+    await interaction.reply(
+      'Response on confirm of modal window',
+    )
+  }
 
-	@SelectReply('') // customId of select
-	async selectReply(interaction: AnySelectMenuInteraction) {
-		await interaction.reply('Select response')
-	}
+  @SelectReply('') // customId of select
+  async selectReply(interaction: AnySelectMenuInteraction) {
+    await interaction.reply('Select response')
+  }
 }
 ```

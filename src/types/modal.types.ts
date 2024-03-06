@@ -1,7 +1,7 @@
 import { ModalSubmitInteraction } from 'discord.js'
 
 export type ModalReplyCallback = (
-	interaction: ModalSubmitInteraction
+  interaction: ModalSubmitInteraction,
 ) => Promise<void>
 
 export type Modals = Record<string, ModalReplyCallback>

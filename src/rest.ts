@@ -4,14 +4,19 @@ import InteractionsLoader from './loaders/loader'
 
 config()
 
-const rest = new REST({ version: '10' }).setToken(process.env.TOKEN ?? '')
+const rest = new REST({ version: '10' }).setToken(
+  process.env.TOKEN ?? '',
+)
 
 export async function init() {
-	InteractionsLoader.load()
+  InteractionsLoader.load()
 
-	console.log('Registering commands')
-	await rest.put(Routes.applicationCommands(process.env.CLIENT_ID ?? ''), {
-		body: InteractionsLoader.commands,
-	})
-	console.log('Slash commands were registered successfull')
+  console.log('Registering commands')
+  await rest.put(
+    Routes.applicationCommands(process.env.CLIENT_ID ?? ''),
+    {
+      body: InteractionsLoader.commands,
+    },
+  )
+  console.log('Slash commands were registered successfull')
 }
